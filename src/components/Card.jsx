@@ -50,7 +50,7 @@ const Card = () => {
       <div>
         <a
           href="#"
-          className="px-24 py-4 flex items-center bg-white border  shadow md:flex-row md:max-w-10xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+          className="lg:mx-96 lg:my-3 px-2 py-4 flex items-center bg-white border  shadow md:flex-row md:max-w-10xl hover:bg-gray-100 dark:border-white-700 dark:bg-white-800 dark:hover:bg-gray-200"
         >
           {/* flex-col */}
           <img
@@ -58,15 +58,31 @@ const Card = () => {
             src="https://m.media-amazon.com/images/I/91SZSW8qSsL.jpg"
           />
           <div className="flex flex-col justify-between p-4 leading-normal">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Noteworthy technology acquisitions 2021
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-teal-800">
+              1984
+              <p className="text-sm">by George Orwell</p>
             </h5>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 ">
               Here are the biggest enterprise technology acquisitions of 2021 so
               far, in reverse chronological order. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Error, amet. Obcaecati, ex illum
-              enim aliquam voluptatem magni porro itaque expedita.
             </p>
+            <p>
+              <span className="font-bold">Owner: </span>
+              <span>John Walker</span>
+            </p>
+            <p className="mt-3">
+              <span className="font-bold">Status: </span>
+              <span className="bg-teal-800 text-white rounded-md px-1 py-1">
+                Free
+              </span>
+              <button className="bg-teal-700 text-white  px-2 py-1 rounded-md  hover:bg-teal-600 sm:float-right ml-5 ">
+                Want to read
+              </button>
+              {/* block ml-0 sm:ml-auto */}
+            </p>
+            {/* <button className="bg-teal-700 text-white w-max px-2 py-1 rounded-md mt-3 hover:bg-teal-600 block ml-0 sm:ml-auto">
+              Want to read
+            </button> */}
           </div>
         </a>
       </div>

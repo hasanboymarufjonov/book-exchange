@@ -10,9 +10,9 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Dashboard", href: "/", current: true },
-  { name: "Sign-Up", href: "/sign-up", current: false },
-  { name: "Sign-In", href: "/sign-in", current: false },
+  { name: "Dashbord", href: "/", current: true },
+  { name: "New Book", href: "/sign-up", current: false },
+  { name: "About", href: "/sign-in", current: false },
   { name: "Modal", href: "/modal", current: false },
   { name: "Reports", href: "#", current: false },
 ];
@@ -38,7 +38,7 @@ export default function Example() {
         ```
       */}
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-amber-100">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -50,7 +50,9 @@ export default function Example() {
                         src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                         alt="Your Company"
                       /> */}
-                      <div className="text-gray-300	font-bold	">BookExchange</div>
+                      <div className="text-yellow-800	font-bold	">
+                        BookExchange
+                      </div>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
@@ -60,8 +62,8 @@ export default function Example() {
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? "bg-gray-900 text-white"
-                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                ? "bg-yellow-900 text-white"
+                                : "text-yellow-800 hover:bg-yellow-900 hover:text-white",
                               "px-3 py-2 rounded-md text-sm font-medium"
                             )}
                             aria-current={item.current ? "page" : undefined}
@@ -76,7 +78,7 @@ export default function Example() {
                     <div className="ml-4 flex items-center md:ml-6">
                       <button
                         type="button"
-                        className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        className="rounded-full bg-amber-100 p-1 text-yellow-800 hover:text-white hover:bg-yellow-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                       >
                         <span className="sr-only">View notifications</span>
                         <BellIcon className="h-6 w-6" aria-hidden="true" />

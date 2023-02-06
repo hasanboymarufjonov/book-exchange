@@ -31,7 +31,7 @@ export default function Example() {
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
               alt="Your Company"
             /> */}
-            <h1 className="text-5xl text-indigo-500 text-center font-bold">
+            <h1 className="text-5xl text-yellow-800 text-center font-bold">
               Book Exchange
             </h1>
             <h2 className="mt-6 text-center text-2xl font-bold tracking-tight text-gray-900">
@@ -109,11 +109,11 @@ export default function Example() {
             <div>
               <button
                 type="submit"
-                className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="group relative flex w-full justify-center rounded-md border border-transparent bg-yellow-800 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <LockClosedIcon
-                    className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                    className="h-5 w-5 text-yellow-600 group-hover:text-indigo-400"
                     aria-hidden="true"
                   />
                 </span>
