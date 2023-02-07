@@ -49,11 +49,19 @@ const SearchSidebar = () => {
             id="countries"
             class="mt-2 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-amber-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 "
           >
-            <option selected>Choose a state</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">France</option>
-            <option value="DE">Germany</option>
+            <option selected>Choose a province</option>
+            <option value="US">Andijan</option>
+            <option value="CA">Bukhara</option>
+            <option value="FR">Djizzak</option>
+            <option value="DE">Fergana</option>
+            <option value="DE">Kashkadarya</option>
+            <option value="DE">Khorezm</option>
+            <option value="DE">Namangan</option>
+            <option value="DE">Samarkand</option>
+            <option value="DE">Surkhandarya</option>
+            <option value="DE">Syrdarya</option>
+            <option value="DE">Tashkent</option>
+            <option value="DE">Republic of Karakalpakistan</option>
           </select>
           <select
             id="countries"

@@ -47,36 +47,37 @@ const Card = () => {
     //   </div>
     // </div>
     <>
-      <div>
+      <div className="">
         <a
           href="#"
-          className="lg:mx-96 lg:my-3 px-2 py-4 flex items-center bg-white border  shadow md:flex-row md:max-w-10xl hover:bg-gray-100 dark:border-white-700 dark:bg-white-800 dark:hover:bg-gray-200"
+          className="lg:mx-96 lg:my-3 px-5  py-0 flex items-center bg-white border  shadow md:flex-row md:max-w-10xl hover:bg-gray-100 dark:border-white-700 dark:bg-white-800 dark:hover:bg-gray-200"
         >
           {/* flex-col */}
+          <p>Hello</p>
           <img
-            className="object-cover w-24 rounded-t-lg h-36 md:h-auto md:w-24 md:rounded-none md:rounded-l-lg"
+            className="object-cover w-24 h-36 md:h-auto md:w-24 md:rounded-none "
             src="https://m.media-amazon.com/images/I/91SZSW8qSsL.jpg"
           />
           <div className="flex flex-col justify-between p-4 leading-normal">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-teal-800">
+            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 ">
               1984
               <p className="text-sm">by George Orwell</p>
             </h5>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 ">
+            <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400 ">
               Here are the biggest enterprise technology acquisitions of 2021 so
               far, in reverse chronological order. Lorem ipsum dolor sit amet
             </p>
-            <p>
-              <span className="font-bold">Owner: </span>
-              <span>John Walker</span>
-            </p>
+            {/* <p>
+              <span className="font-bold text-xs">Owner: </span>
+              <span className="text-xs">John Walker</span>
+            </p> */}
             <p className="mt-3">
-              <span className="font-bold">Status: </span>
-              <span className="bg-teal-800 text-white rounded-md px-1 py-1">
+              <span className="font-bold text-xs">Status: </span>
+              <span className="bg-amber-100 text-black rounded-md px-1 py-1 text-xs">
                 Free
               </span>
-              <button className="bg-teal-700 text-white  px-2 py-1 rounded-md  hover:bg-teal-600 sm:float-right ml-5 ">
-                Want to read
+              <button className="bg-yellow-900 text-white  px-2 py-1 rounded-md  hover:bg-teal-600 sm:float-right text-sm ml-10 sm:ml-0">
+                Exchange
               </button>
               {/* block ml-0 sm:ml-auto */}
             </p>
