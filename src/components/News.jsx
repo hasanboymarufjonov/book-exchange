@@ -3,7 +3,7 @@ import React from "react";
 const SearchSidebarLeft = () => {
   return (
     <div>
-      <div className="sidenav-left sm:absolute h-full w-80 sm:left-0 sm:pt-5 sm:mt-20 sm:ml-5 ml-8 sm:top-0 overflow-x-hidden mt-5 ">
+      <div className="sidenav-left lg:absolute h-full w-80 sm:left-0 sm:pt-5 sm:mt-20 sm:ml-5 ml-8 sm:top-0 overflow-x-hidden mt-5 ">
         <div className="border-b-2 pb-3 border-gray-400">
           <h1 className="font-bold text-sm">News Feed</h1>
           <h2 className="text-base my-2">9 New Books We Recommend This Week</h2>

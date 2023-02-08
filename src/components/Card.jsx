@@ -47,13 +47,23 @@ const Card = () => {
     //   </div>
     // </div>
     <>
-      <div className="">
-        <a
-          href="#"
-          className="lg:mx-96 lg:my-3 px-5  py-0 flex items-center bg-white border  shadow md:flex-row md:max-w-10xl hover:bg-gray-100 dark:border-white-700 dark:bg-white-800 dark:hover:bg-gray-200"
-        >
+      <div className="lg:mx-96 lg:my-3 px-5  py-0  bg-white border  shadow md:flex-row md:max-w-10xl hover:bg-gray-100 dark:border-white-700">
+        <div class=" flex items-center space-x-4 my-2 object-cover">
+          <img
+            class="w-10 h-10 rounded-full"
+            src="https://imageio.forbes.com/specials-images/imageserve/5c76b7d331358e35dd2773a9/0x0.jpg?format=jpg&crop=4401,4401,x0,y0,safe&height=416&width=416&fit=bounds"
+            alt=""
+          />
+          <div class="font-medium">
+            <div>Mark</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+              PHP Developer
+            </div>
+          </div>
+        </div>
+        <hr />
+        <a href="#" className="flex items-center">
           {/* flex-col */}
-          <p>Hello</p>
           <img
             className="object-cover w-24 h-36 md:h-auto md:w-24 md:rounded-none "
             src="https://m.media-amazon.com/images/I/91SZSW8qSsL.jpg"
@@ -67,10 +77,7 @@ const Card = () => {
               Here are the biggest enterprise technology acquisitions of 2021 so
               far, in reverse chronological order. Lorem ipsum dolor sit amet
             </p>
-            {/* <p>
-              <span className="font-bold text-xs">Owner: </span>
-              <span className="text-xs">John Walker</span>
-            </p> */}
+
             <p className="mt-3">
               <span className="font-bold text-xs">Status: </span>
               <span className="bg-amber-100 text-black rounded-md px-1 py-1 text-xs">

@@ -4,8 +4,21 @@ import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { IdentificationIcon } from "@heroicons/react/24/outline";
 import React from "react";
+import axios from "axios";
+
+// import SignUp from "./SignUp";
 
 export default function Example() {
+  // const [post, setPost] = React.useState(null);
+
+  // React.useEffect(() => {
+  //   axios.get(`${createAccountURL}/1`).then((response) => {
+  //     setPost(response.data);
+  //   });
+  // }, []);
+
+  // if (!post) return "No post!";
+
   const [open, setOpen] = useState(false);
   const [isShown, setIsShown] = useState(false);
 
@@ -16,6 +29,62 @@ export default function Example() {
   function closeModal() {
     setOpen(false);
     setIsShown((current) => !current);
+  }
+
+  function closeModal() {
+    // setOpen(false);
+    setIsShown((current) => !current);
+  }
+
+  const [first_name, setfirst_name] = useState("1");
+  const [last_name, setlast_name] = useState("1");
+  const [email, setemail] = useState("1");
+  const [username, setusername] = useState("1");
+  const [password, setpassword] = useState("1");
+  const [password2, setpassword2] = useState("1");
+
+  const createAccountURL = "";
+
+  function createAccount(event) {
+    event.preventDefault();
+    console.log("test1");
+    axios
+      .post(createAccountURL, {
+        username: username,
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        password: password,
+        password2: password2,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    // fetch(createAccountURL, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     username: username,
+    //     first_name: first_name,
+    //     last_name: last_name,
+    //     email: email,
+    //     password: password,
+    //     password2: password2,
+    //   }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => console.log(data))
+    //   .catch((error) => console.error(error));
+
+    // .then((response) => {
+    //   setPost(response.data);
+    // });
   }
 
   return (
@@ -142,7 +211,8 @@ export default function Example() {
       <Transition.Root show={open} as={Fragment}>
         <div className="md:grid md:grid-cols-7 place-items-center mt-5">
           <div className="mt-5 md:col-span-10 md:mt-0">
-            <form action="#" method="POST">
+            {/* action={createAccountURL} method="POST" */}
+            <form onSubmit={createAccount}>
               <div className="shadow sm:overflow-hidden sm:rounded-md">
                 <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
                   {/* <button
@@ -172,8 +242,9 @@ export default function Example() {
                       </label>
                       <input
                         type="text"
-                        name="first-name"
+                        name="first_name"
                         id="first-name"
+                        onChange={(event) => setfirst_name(event.target.value)}
                         autoComplete="given-name"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
@@ -188,8 +259,25 @@ export default function Example() {
                       </label>
                       <input
                         type="text"
-                        name="last-name"
+                        name="last_name"
                         id="last-name"
+                        onChange={(event) => setlast_name(event.target.value)}
+                        autoComplete="family-name"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      />
+                    </div>
+                    <div className="col-span-6 sm:col-span-3">
+                      <label
+                        htmlFor="last-name"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        Username
+                      </label>
+                      <input
+                        type="text"
+                        name="username"
+                        id="last-name"
+                        onChange={(event) => setusername(event.target.value)}
                         autoComplete="family-name"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
@@ -204,9 +292,9 @@ export default function Example() {
                       </label>
                       <input
                         type="text"
-                        name="email-address"
+                        onChange={(event) => setemail(event.target.value)}
                         id="email-address"
-                        autoComplete="email"
+                        // autoComplete="email"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
                     </div>
@@ -223,10 +311,16 @@ export default function Example() {
                     </label> */}
                     <input
                       id="password"
-                      name="password"
                       type="password"
                       autoComplete="current-password"
-                      required
+                      onChange={(event) => setpassword(event.target.value)}
+                      className="relative block w-full appearance-none  rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                    />
+                    <input
+                      id="password"
+                      type="password"
+                      autoComplete="current-password"
+                      onChange={(event) => setpassword2(event.target.value)}
                       className="relative block w-full appearance-none  rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>

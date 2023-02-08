@@ -10,7 +10,7 @@ const user = {
 };
 const navigation = [
   { name: "Dashbord", href: "/", current: true },
-  { name: "New Book", href: "/sign-up", current: false },
+  { name: "New Book", href: "/add-book", current: false },
   { name: "About", href: "/sign-in", current: false },
   { name: "Modal", href: "/auth", current: false },
   { name: "Reports", href: "#", current: false },

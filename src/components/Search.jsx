@@ -4,7 +4,7 @@ import Footer from "./Footer";
 const SearchSidebar = () => {
   return (
     <div>
-      <div className="sidenav sm:absolute h-full w-80 pt-5 sm:mt-16 sm:mr-5 sm:right-0 ml-8 mb-4 sm:top-0 overflow-x-hidden">
+      <div className="sidenav lg:absolute h-full w-80 pt-5 sm:mt-16 sm:mr-5 sm:right-0 ml-8 mb-4 sm:top-0 overflow-x-hidden">
         <form>
           <label
             for="default-search"
