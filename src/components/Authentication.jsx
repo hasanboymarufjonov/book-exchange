@@ -95,7 +95,7 @@ export default function Example() {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert("Post published");
+        alert("Account Created");
         window.location = "/";
       })
       .catch((err) => alert(err));
