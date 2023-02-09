@@ -36,51 +36,66 @@ export default function Example() {
     setIsShown((current) => !current);
   }
 
-  const [first_name, setfirst_name] = useState("1");
-  const [last_name, setlast_name] = useState("1");
-  const [email, setemail] = useState("1");
-  const [username, setusername] = useState("1");
-  const [password, setpassword] = useState("1");
-  const [password2, setpassword2] = useState("1");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
 
-  const createAccountURL = "";
+  const createAccountURL =
+    "https://bookexchangeapi.pythonanywhere.com/users/register/";
 
   function createAccount(event) {
     event.preventDefault();
-    console.log("test1");
-    axios
-      .post(createAccountURL, {
-        username: username,
-        first_name: first_name,
-        last_name: last_name,
-        email: email,
-        password: password,
-        password2: password2,
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-    // fetch(createAccountURL, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
+    // console.log("test1");
+    // axios
+    //   .post(createAccountURL, {
     //     username: username,
-    //     first_name: first_name,
-    //     last_name: last_name,
+    //     first_name: firstName,
+    //     last_name: lastName,
     //     email: email,
     //     password: password,
     //     password2: password2,
-    //   }),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => console.log(data))
-    //   .catch((error) => console.error(error));
+    //   })
+    //   .then(function (response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+
+    fetch(createAccountURL, {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json charset=utf-8",
+        "X-CSRFToken":
+          "xVUHdX9erF4BS1WpZynmAEjS4RebDdUFKw43OQxaIQltEyQRTHcqiQHwiSQpH9Of",
+        "Access-Control-Allow-Origin": "*",
+        allow: "POST,OPTIONS",
+        connection: "keep-alive",
+        "content-length": 58,
+        "cross-origin-opener-policy": "same-origin",
+        date: "Thu,09 Feb 2023 09:34:02 GMT",
+        "referrer-policy": "same-origin",
+        server: "PythonAnywhere",
+        vary: "Accept",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+      },
+      body: JSON.stringify({
+        username: username,
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        password: password,
+        password2: password2,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
 
     // .then((response) => {
     //   setPost(response.data);
@@ -116,7 +131,7 @@ export default function Example() {
               </a>
             </p> */}
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6">
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
@@ -125,7 +140,6 @@ export default function Example() {
                 </label>
                 <input
                   id="email-address"
-                  name="email"
                   type="email"
                   autoComplete="email"
                   required
@@ -139,10 +153,9 @@ export default function Example() {
                 </label>
                 <input
                   id="password"
-                  name="password"
                   type="password"
-                  autoComplete="current-password"
                   required
+                  autoComplete="current-password"
                   className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                   placeholder="Password"
                 />
@@ -244,7 +257,7 @@ export default function Example() {
                         type="text"
                         name="first_name"
                         id="first-name"
-                        onChange={(event) => setfirst_name(event.target.value)}
+                        onChange={(event) => setFirstName(event.target.value)}
                         autoComplete="given-name"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
@@ -261,7 +274,7 @@ export default function Example() {
                         type="text"
                         name="last_name"
                         id="last-name"
-                        onChange={(event) => setlast_name(event.target.value)}
+                        onChange={(event) => setLastName(event.target.value)}
                         autoComplete="family-name"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
@@ -277,7 +290,7 @@ export default function Example() {
                         type="text"
                         name="username"
                         id="last-name"
-                        onChange={(event) => setusername(event.target.value)}
+                        onChange={(event) => setUsername(event.target.value)}
                         autoComplete="family-name"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
@@ -292,7 +305,7 @@ export default function Example() {
                       </label>
                       <input
                         type="text"
-                        onChange={(event) => setemail(event.target.value)}
+                        onChange={(event) => setEmail(event.target.value)}
                         id="email-address"
                         // autoComplete="email"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
@@ -313,14 +326,14 @@ export default function Example() {
                       id="password"
                       type="password"
                       autoComplete="current-password"
-                      onChange={(event) => setpassword(event.target.value)}
+                      onChange={(event) => setPassword(event.target.value)}
                       className="relative block w-full appearance-none  rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                     />
                     <input
                       id="password"
                       type="password"
                       autoComplete="current-password"
-                      onChange={(event) => setpassword2(event.target.value)}
+                      onChange={(event) => setPassword2(event.target.value)}
                       className="relative block w-full appearance-none  rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
