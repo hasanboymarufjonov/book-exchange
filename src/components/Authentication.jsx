@@ -64,43 +64,76 @@ export default function Example() {
     //   .catch(function (error) {
     //     console.log(error);
     //   });
+    //   try{}
 
-    fetch(createAccountURL, {
+    console.log(firstName, lastName, username, email, password, password2);
+
+    const user = {
+      username: username,
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      password: password,
+      password2: password2,
+    };
+
+    // fetch(createAccountURL, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json; charset=utf-8",
+    //   },
+    //   body: JSON.stringify({}),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => console.log(data))
+    //   .catch((error) => console.error(error));
+
+    fetch("https://bookexchangeapi.pythonanywhere.com/users/register/", {
       method: "POST",
-      headers: {
-        accept: "application/json",
-        "Content-Type": "application/json charset=utf-8",
-        "X-CSRFToken":
-          "xVUHdX9erF4BS1WpZynmAEjS4RebDdUFKw43OQxaIQltEyQRTHcqiQHwiSQpH9Of",
-        "Access-Control-Allow-Origin": "*",
-        allow: "POST,OPTIONS",
-        connection: "keep-alive",
-        "content-length": 58,
-        "cross-origin-opener-policy": "same-origin",
-        date: "Thu,09 Feb 2023 09:34:02 GMT",
-        "referrer-policy": "same-origin",
-        server: "PythonAnywhere",
-        vary: "Accept",
-        "x-content-type-options": "nosniff",
-        "x-frame-options": "DENY",
-      },
-      body: JSON.stringify({
-        username: username,
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        password: password,
-        password2: password2,
-      }),
+      body: JSON.stringify(user),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
     })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+      .then((res) => res.json())
+      .then((data) => {
+        alert("Post published");
+        window.location = "/";
+      })
+      .catch((err) => alert(err));
 
     // .then((response) => {
     //   setPost(response.data);
     // });
   }
+
+  // let createAccount = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     let res = await fetch(
+  //       "https://bookexchangeapi.pythonanywhere.com/users/register/",
+  //       {
+  //         method: "POST",
+  //         body: JSON.stringify({
+  //           username: username,
+  //           first_name: firstName,
+  //           last_name: lastName,
+  //           email: email,
+  //           password: password,
+  //           password2: password2,
+  //         }),
+  //       }
+  //     );
+  //     let resJson = await res.json();
+  // if (res.status === 200) {
+  //   setName("");
+  //   setEmail("");
+  //   setMessage("User created successfully");
+  // } else {
+  //   setMessage("Some error occured");
+  // }
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
     <div>
